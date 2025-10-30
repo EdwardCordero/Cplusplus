@@ -1,6 +1,51 @@
-/.vscode
-/main.exe
-/main.ilk
-/main.obj
-/main.pdb
-/vc140.pdb
+# ========================
+# OS / System Files
+# ========================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ========================
+# VS Code
+# ========================
+.vscode/
+*.code-workspace
+
+# ========================
+# Compiler / Build Artifacts (MSVC)
+# ========================
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.idb
+*.lib
+*.exp
+*.log
+*.tlog
+*.pch
+*.res
+*.rsp
+*.manifest
+*.sbr
+*.ipdb
+*.iobj
+*.user
+*.suo
+*.lastbuildstate
+
+# ========================
+# Output / Build Folders
+# ========================
+build/
+out/
+bin/
+obj/
+x64/
+x86/
+Debug/
+Release/
+temp/
+
+# ========================

@@ -7,8 +7,8 @@ A curated list of progressively challenging C problems to build true low-level m
 ## 🧩 Phase 1: Fundamentals of Memory & Pointers
 **Goal:** Understand arrays, pointers, and basic string manipulation.
 
-- [ ] Implement `strlen` manually  
-- [ ] Implement `strcpy` manually  
+- [X] Implement `strlen` manually  
+- [X] Implement `strcpy` manually  
 - [ ] Reverse a string in place  
 - [ ] Swap two integers using pointers  
 - [ ] Find max/min in an integer array using pointers  

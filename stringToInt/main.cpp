@@ -35,7 +35,7 @@ T stringToInt(const char* str)
     return ans * sign;
 }
 
-int main(char* args[])
+int main(int argc, char** argv)
 {
     const char* strArr[] = {"Test", "End", "Edward", "Cplusplus"};
     const char* numArr[] = {"01", "10", "28", "-321", "-2", "1232.72"};
@@ -43,4 +43,6 @@ int main(char* args[])
     {
         std::cout << stringToInt<float>(numArr[i]) << std::endl;
     }
+
+    return 0;
 }

@@ -16,7 +16,7 @@ A curated list of progressively challenging C problems to build true low-level m
 - [X] Implement your own `strchr` (find first char in string)  
 - [X] Reverse an integer array in place  
 - [X] Implement `memcpy` manually  
-- [ ] Count vowels and consonants in a string  
+- [X] Count vowels and consonants in a string  
 
 ---
 

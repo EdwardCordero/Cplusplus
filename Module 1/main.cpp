@@ -144,10 +144,33 @@ void swapIntsInArr(int* nums, int size)
     }
 }
 
+void countVowelsAndConsonants(const char* str)
+{
+    int vc = 0, cc = 0;
+    int i = 0;
+    char c = std::tolower(str[i]);
+
+    while(c != '\0')
+    {
+        if((c =='a') || (c == 'e') || (c == 'i') || (c == 'o') || (c == 'u'))
+        {
+            vc++;
+        }
+        else{
+            cc++;
+        }
+
+        i++;
+        c = std::tolower(str[i]);
+    }
+
+    std::cout << str << " Num of Vowels: " << vc << " Num of Consonants: " << cc << std::endl;
+}
+
 char** generateDefaultStringArray()
 {
-    int ns = 4;
-    const char* strings[] = { "Edward", "Test", "Test", "Start"} ;
+    int ns = 5;
+    const char* strings[] = { "Edward", "Test", "Test", "Start", "End"} ;
     char** arr = new char*[ns + 1];     // +1 for nullptr to mark the end of arr
 
     for(int i = 0; i < ns; i++)
@@ -215,24 +238,17 @@ int main(int argc, char** argsv)
     char** arr = generateDefaultStringArray();
     int size = 5;
     int* nums = generateDefaultIntArray(size);
-    int* numsCpy = new int[size];
     // Print both arrays
     //printArr<int>(nums, size);
     //printArr<char>(arr);
 
     // Logic
-    size_t len = stringLen(arr[0]);
-    char* copy = new char[len];
-    copyPtr(copy, arr[0], len);
-    std::cout << "copy: " << copy << " with len " << stringLen(copy) << std::endl;
-
-    copyPtr(numsCpy, nums, size);
-    
-    printArr<int>(nums, size);
-    printArr<int>(numsCpy, size);
+    for(int i = 0; arr[i] != nullptr; i++)
+    {
+        countVowelsAndConsonants(arr[i]);
+    }
 
     // Clean up
     cleanupArr(arr);
     cleanupArr(nums);
-    cleanupArr(numsCpy);
 }

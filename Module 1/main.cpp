@@ -49,6 +49,26 @@ void reverseStr(char* str)
     }
 }
 
+void findMinMax(int* nums, int size)
+{
+    int maxIndex = 0, minIndex = 0;
+    for(int i = 0; i < size; i++)
+    {
+        int currentNum = nums[i];
+        if(currentNum > nums[maxIndex])
+        {
+            maxIndex = i;
+        }
+        if(currentNum < nums[minIndex])
+        {
+            minIndex = i;
+        }
+    }
+
+    std::cout << "Max: " << nums[maxIndex] << " at index: " << maxIndex << std::endl;
+    std::cout << "Min: " << nums[minIndex] << " at index: " << minIndex << std::endl;
+}
+
 void swapIntsInArr(int* nums, int size)
 {
     std::cout << "Before Swap" << std::endl;
@@ -101,7 +121,7 @@ char** generateDefaultStringArray()
 int* generateDefaultIntArray(int size)
 {
     int nn = size;
-    int* nums = new int[nn]{ 1, 453, 40, 100, 5443};
+    int* nums = new int[nn]{ 89, 5443, 1, 100, 23 };
     return nums;
 }
 
@@ -142,24 +162,17 @@ void cleanupArr(T* arr)
 
 int main(int argc, char** argsv)
 {
-    std::cout << __cplusplus << std::endl;
-
     // generate char*[] and int[] arrays
     char** arr = generateDefaultStringArray();
     int size = 5;
     int* nums = generateDefaultIntArray(5);
 
-    // Logic
-    //swapIntsInArr(nums, size);
-    swapIntsInArr(nums, size);
-    for(int i = 0; arr[i] != nullptr; i++)
-    {
-        reverseStr(arr[i]);
-    }
-
     // Print both arrays
-    //printArr<int>(nums, size);
-    printArr<char>(arr);
+    printArr<int>(nums, size);
+    //printArr<char>(arr);
+
+    // Logic
+    findMinMax(nums, size);
 
     // Clean up
     cleanupArr(arr);

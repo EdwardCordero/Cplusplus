@@ -13,9 +13,9 @@ A curated list of progressively challenging C problems to build true low-level m
 - [X] Swap array of integers using pointers  
 - [X] Find max/min in an integer array using pointers  
 - [X] Implement `strcmp` manually  
-- [ ] Implement your own `strchr` (find first char in string)  
-- [ ] Reverse an integer array in place  
-- [ ] Implement `memcpy` manually  
+- [X] Implement your own `strchr` (find first char in string)  
+- [X] Reverse an integer array in place  
+- [X] Implement `memcpy` manually  
 - [ ] Count vowels and consonants in a string  
 
 ---

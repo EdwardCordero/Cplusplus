@@ -102,6 +102,22 @@ void findMinMax(int* nums, int size)
     std::cout << "Min: " << *minPtr << " at address: " << minPtr << std::endl;
 }
 
+template <typename T>
+T* copyPtr(T* destination, T* src, int size)
+{
+    for(int i = 0; i < size; i++)
+    {
+        destination[i] = src[i];
+    }
+
+    if(std::is_same_v<T, char>)
+    {
+        destination[size] = '\0';
+    }
+
+    return destination;
+}
+
 void swapIntsInArr(int* nums, int size)
 {
     std::cout << "Before Swap" << std::endl;
@@ -198,17 +214,25 @@ int main(int argc, char** argsv)
     // generate char*[] and int[] arrays
     char** arr = generateDefaultStringArray();
     int size = 5;
-    int* nums = generateDefaultIntArray(5);
-
+    int* nums = generateDefaultIntArray(size);
+    int* numsCpy = new int[size];
     // Print both arrays
     //printArr<int>(nums, size);
     //printArr<char>(arr);
 
     // Logic
-    char c = 'w';
-    std::cout << "char: " << c << " found in string:" << arr[0] << " at index: " << findChar(arr[0], c) << std::endl;
+    size_t len = stringLen(arr[0]);
+    char* copy = new char[len];
+    copyPtr(copy, arr[0], len);
+    std::cout << "copy: " << copy << " with len " << stringLen(copy) << std::endl;
+
+    copyPtr(numsCpy, nums, size);
+    
+    printArr<int>(nums, size);
+    printArr<int>(numsCpy, size);
 
     // Clean up
     cleanupArr(arr);
     cleanupArr(nums);
+    cleanupArr(numsCpy);
 }

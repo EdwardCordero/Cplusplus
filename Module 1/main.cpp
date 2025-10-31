@@ -48,6 +48,19 @@ bool stringcompare(const char* a, const char* b)
     return true;
 }
 
+int findChar(const char* str, char c)
+{
+    for(int i = 0; i < stringLen(str); i++)
+    {
+        if(str[i] == c)
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
 void reverseStr(char* str)
 {
     int end = stringLen(str) - 1;
@@ -192,11 +205,8 @@ int main(int argc, char** argsv)
     //printArr<char>(arr);
 
     // Logic
-    std::cout << "Do these strings match? " << arr[0] << ", " << arr[1] << ' ' << stringcompare(arr[0], arr[1]) << std::endl;
-    
-    std::cout << "Do these strings match? " << arr[1] << ", " << arr[2] << ' ' << stringcompare(arr[1], arr[2]) << std::endl;
-    
-    std::cout << "Do these strings match? " << arr[2] << ", " << arr[3] << ' ' << stringcompare(arr[2], arr[3]) << std::endl;
+    char c = 'w';
+    std::cout << "char: " << c << " found in string:" << arr[0] << " at index: " << findChar(arr[0], c) << std::endl;
 
     // Clean up
     cleanupArr(arr);

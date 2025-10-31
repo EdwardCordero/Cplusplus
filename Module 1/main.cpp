@@ -29,6 +29,25 @@ void stringCopy(char* destination, const char* src)
     destination[j++] = '\0';
 }
 
+bool stringcompare(const char* a, const char* b)
+{
+    int i = 0;
+    while(a[i] != '\0')
+    {
+        if(a[i] != b[i])
+        {
+            return false;
+        }
+        i++;
+    }
+    if(b[i] != '\0')
+    {
+        return false;
+    }
+
+    return true;
+}
+
 void reverseStr(char* str)
 {
     int end = stringLen(str) - 1;
@@ -99,7 +118,7 @@ void swapIntsInArr(int* nums, int size)
 char** generateDefaultStringArray()
 {
     int ns = 4;
-    const char* strings[] = { "Edward", "Test", "End", "Start"} ;
+    const char* strings[] = { "Edward", "Test", "Test", "Start"} ;
     char** arr = new char*[ns + 1];     // +1 for nullptr to mark the end of arr
 
     for(int i = 0; i < ns; i++)
@@ -169,13 +188,15 @@ int main(int argc, char** argsv)
     int* nums = generateDefaultIntArray(5);
 
     // Print both arrays
-    printArr<int>(nums, size);
+    //printArr<int>(nums, size);
     //printArr<char>(arr);
 
     // Logic
-    findMinMax(nums, size);
-    swapIntsInArr(nums, size);
-    findMinMax(nums, size);
+    std::cout << "Do these strings match? " << arr[0] << ", " << arr[1] << ' ' << stringcompare(arr[0], arr[1]) << std::endl;
+    
+    std::cout << "Do these strings match? " << arr[1] << ", " << arr[2] << ' ' << stringcompare(arr[1], arr[2]) << std::endl;
+    
+    std::cout << "Do these strings match? " << arr[2] << ", " << arr[3] << ' ' << stringcompare(arr[2], arr[3]) << std::endl;
 
     // Clean up
     cleanupArr(arr);

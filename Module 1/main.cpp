@@ -1,4 +1,5 @@
 #include <iostream>
+#include <type_traits>
 
 size_t stringLen(const char* str)
 {
@@ -48,10 +49,36 @@ void reverseStr(char* str)
     }
 }
 
+void swapIntsInArr(int* nums, int size)
+{
+    std::cout << "Before Swap" << std::endl;
+    for(int n = 0; n < size; n++)
+    {
+        std::cout << n << " Address: " << &nums[n] << " Value: " << nums[n] << std::endl;
+    }
+
+    int* end = &nums[size - 1];
+    int* start = &nums[0];
+    for(int i = 0; start < end; i++)
+    {
+        int temp = *start;
+        *start = *end;
+        *end = temp;
+        start++;
+        end--;
+    }
+
+    std::cout << "After Swap" << std::endl;
+    for(int n = 0; n < size; n++)
+    {
+        std::cout << n << " Address: " << &nums[n] << " Value: " << nums[n] << std::endl;
+    }
+}
+
 char** generateDefaultStringArray()
 {
     int ns = 4;
-    char* strings[] = { "Edward", "Test", "End", "Start"} ;
+    const char* strings[] = { "Edward", "Test", "End", "Start"} ;
     char** arr = new char*[ns + 1];     // +1 for nullptr to mark the end of arr
 
     for(int i = 0; i < ns; i++)
@@ -71,6 +98,13 @@ char** generateDefaultStringArray()
     return arr;
 }
 
+int* generateDefaultIntArray(int size)
+{
+    int nn = size;
+    int* nums = new int[nn]{ 1, 453, 40, 100, 5443};
+    return nums;
+}
+
 template <typename T>
 void printArr(T** arr)
 {
@@ -80,16 +114,54 @@ void printArr(T** arr)
     }
 }
 
+template <typename T>
+void printArr(T* arr, int size)
+{
+    for(int i = 0; i < size; i++)
+    {
+        std::cout << arr[i] << std::endl;
+    }
+}
+
+template <typename T>
+void cleanupArr(T** arr)
+{
+    for(int i = 0; arr[i] != nullptr; i++)
+    {
+        delete[] arr[i];
+    }
+
+    delete[] arr;
+}
+
+template <typename T>
+void cleanupArr(T* arr)
+{
+    delete[] arr;
+}
+
 int main(int argc, char** argsv)
 {
-    char** arr = generateDefaultStringArray();
+    std::cout << __cplusplus << std::endl;
 
+    // generate char*[] and int[] arrays
+    char** arr = generateDefaultStringArray();
+    int size = 5;
+    int* nums = generateDefaultIntArray(5);
+
+    // Logic
+    //swapIntsInArr(nums, size);
+    swapIntsInArr(nums, size);
     for(int i = 0; arr[i] != nullptr; i++)
     {
         reverseStr(arr[i]);
     }
 
-    printArr(arr);
-    
-    delete[] arr;
+    // Print both arrays
+    //printArr<int>(nums, size);
+    printArr<char>(arr);
+
+    // Clean up
+    cleanupArr(arr);
+    cleanupArr(nums);
 }

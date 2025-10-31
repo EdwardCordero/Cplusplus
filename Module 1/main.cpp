@@ -51,22 +51,23 @@ void reverseStr(char* str)
 
 void findMinMax(int* nums, int size)
 {
-    int maxIndex = 0, minIndex = 0;
+    int* maxPtr = &nums[0];
+    int* minPtr = &nums[0];
     for(int i = 0; i < size; i++)
     {
-        int currentNum = nums[i];
-        if(currentNum > nums[maxIndex])
+        int* currentNum = &nums[i];
+        if(*currentNum > *maxPtr)
         {
-            maxIndex = i;
+            maxPtr = currentNum;
         }
-        if(currentNum < nums[minIndex])
+        if(*currentNum < *minPtr)
         {
-            minIndex = i;
+            minPtr = currentNum;
         }
     }
 
-    std::cout << "Max: " << nums[maxIndex] << " at index: " << maxIndex << std::endl;
-    std::cout << "Min: " << nums[minIndex] << " at index: " << minIndex << std::endl;
+    std::cout << "Max: " << *maxPtr << " at address: " << maxPtr << std::endl;
+    std::cout << "Min: " << *minPtr << " at address: " << minPtr << std::endl;
 }
 
 void swapIntsInArr(int* nums, int size)
@@ -172,6 +173,8 @@ int main(int argc, char** argsv)
     //printArr<char>(arr);
 
     // Logic
+    findMinMax(nums, size);
+    swapIntsInArr(nums, size);
     findMinMax(nums, size);
 
     // Clean up

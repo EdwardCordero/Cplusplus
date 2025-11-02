@@ -37,10 +37,18 @@ char** generateDefaultStringArray()
     return arr;
 }
 
+/// @brief Set size between 1-12 for now, will add random generator later
+/// @param size
+/// @return 
 int* generateDefaultIntArray(int size)
 {
+    const int intPool[] = {1, 30, 405, 57, 24324, 94, 3, 53, 17, 8, 70, 1023};
     int nn = size;
-    int* nums = new int[nn]{ 89, 5443, 1, 100, 23 };
+    int* nums = new int[nn];
+    for(int i = 0; i < size; i++)
+    {
+        nums[i] = intPool[i];
+    }
     return nums;
 }
 

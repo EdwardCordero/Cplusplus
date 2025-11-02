@@ -23,7 +23,7 @@ A curated list of progressively challenging C problems to build true low-level m
 ## ⚙️ Phase 2: Dynamic Memory Management
 **Goal:** Learn heap allocation, resizing, and memory safety.
 
-- [ ] Dynamically allocate an integer array and fill it  
+- [X] Dynamically allocate an integer array and fill it  
 - [ ] Implement your own `strdup`  
 - [ ] Concatenate two strings using `malloc`  
 - [ ] Resize an integer array using `realloc`  

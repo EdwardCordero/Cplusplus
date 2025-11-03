@@ -14,6 +14,8 @@ size_t stringLen(const char* str)
     return i;
 }
 
+/// @brief Creates char array with 5 strings 
+/// @return 
 char** generateDefaultStringArray()
 {
     int ns = 5;

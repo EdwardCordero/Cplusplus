@@ -7,6 +7,20 @@ char** generateDefaultStringArray();
 int* generateDefaultIntArray(int size);
 
 template <typename T>
+bool resizeArr(T*& arr, int newSize)
+{
+    T* newArr = static_cast<T*>(realloc(arr, newSize * sizeof(T)));
+    if(newArr == NULL)
+    {
+        std::cout << "Failed to realloc array size to new size of: " << newSize << std::endl;
+        return false;
+    }
+
+    arr = newArr;
+    return true;
+}
+
+template <typename T>
 void printArr(T** arr)
 {
     for(int i = 0; arr[i] != nullptr; i++)

@@ -26,7 +26,7 @@ A curated list of progressively challenging C problems to build true low-level m
 - [X] Dynamically allocate an integer array and fill it  
 - [X] Implement your own `strdup`  
 - [X] Concatenate two strings using `malloc`  
-- [ ] Resize an integer array using `realloc`  
+- [X] Resize an any T array using `realloc`  
 - [ ] Build a dynamic array (push/pop/resize)  
 - [ ] Demonstrate shallow vs deep copy of a struct  
 - [ ] Free all allocated memory and test with Valgrind  

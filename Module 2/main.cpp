@@ -43,18 +43,32 @@ char* concatStrs(const char* firstStr, const char* secStr)
 
 int main(int argsc, char** argsv)
 {
+    // int orignalSize = 12;
+    // int* intArr = generateDefaultIntArray(orignalSize);
+    // int newSize = 20;
+    // bool status = resizeArr<int>(&intArr, 20);
+    int orignalSize = 5;
     char** charArr = generateDefaultStringArray();
-
-    char* dupStr = concatStrs(charArr[0], charArr[1]);
-
-    int i = 0;
-    while(i <= stringLen(dupStr))
+    int newSize = 10;
+    bool status = resizeArr<char*>(charArr, newSize);
+    
+    if(status)
     {
-        if(dupStr[i] == '\0')
+        for(int i = orignalSize; i < newSize; i++)
         {
-            std::cout << "\\0";
+            charArr[i] = nullptr;
+            bool success = resizeArr<char>(charArr[i], 2);
+            if(success)
+            {
+                charArr[i][0] = 'i';
+                charArr[i][1] = '\0';
+            }
         }
-        std::cout << dupStr[i];
-        i++;
+
+        charArr[newSize] = nullptr;
+        printArr(charArr);
+    }
+    else{
+        printArr(charArr);
     }
 }

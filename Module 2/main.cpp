@@ -43,32 +43,45 @@ char* concatStrs(const char* firstStr, const char* secStr)
 
 int main(int argsc, char** argsv)
 {
-    // int orignalSize = 12;
-    // int* intArr = generateDefaultIntArray(orignalSize);
-    // int newSize = 20;
-    // bool status = resizeArr<int>(&intArr, 20);
-    int orignalSize = 5;
-    char** charArr = generateDefaultStringArray();
-    int newSize = 10;
-    bool status = resizeArr<char*>(charArr, newSize);
-    
+    int orignalSize = 12;
+    int* intArr = generateDefaultIntArray(orignalSize);
+    int newSize = 20;
+    bool status = resizeArr<int>(intArr, 20);
+
     if(status)
     {
         for(int i = orignalSize; i < newSize; i++)
         {
-            charArr[i] = nullptr;
-            bool success = resizeArr<char>(charArr[i], 2);
-            if(success)
-            {
-                charArr[i][0] = 'i';
-                charArr[i][1] = '\0';
-            }
+            intArr[i] = 1;
         }
-
-        charArr[newSize] = nullptr;
-        printArr(charArr);
+        printArr(intArr, newSize);
     }
     else{
-        printArr(charArr);
+        printArr(intArr, orignalSize);
     }
+
+    // int orignalSize = 5;
+    // char** charArr = generateDefaultStringArray();
+    // int newSize = 10;
+    // bool status = resizeArr<char*>(charArr, newSize);
+    
+    // if(status)
+    // {
+    //     for(int i = orignalSize; i < newSize; i++)
+    //     {
+    //         charArr[i] = nullptr;
+    //         bool success = resizeArr<char>(charArr[i], 2);
+    //         if(success)
+    //         {
+    //             charArr[i][0] = 'i';
+    //             charArr[i][1] = '\0';
+    //         }
+    //     }
+
+    //     charArr[newSize] = nullptr;
+    //     printArr(charArr);
+    // }
+    // else{
+    //     printArr(charArr);
+    // }
 }

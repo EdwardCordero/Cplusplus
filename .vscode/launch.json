@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++: Build Active Module",
+      "type": "cppvsdbg",                    // use "cppdbg" if you're on MinGW/g++
+      "request": "launch",
+      "program": "${fileDirname}\\main.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "preLaunchTask": "C/C++: Build Active Module"
+    }
+  ]
+}

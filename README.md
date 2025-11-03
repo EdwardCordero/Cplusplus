@@ -24,8 +24,8 @@ A curated list of progressively challenging C problems to build true low-level m
 **Goal:** Learn heap allocation, resizing, and memory safety.
 
 - [X] Dynamically allocate an integer array and fill it  
-- [ ] Implement your own `strdup`  
-- [ ] Concatenate two strings using `malloc`  
+- [X] Implement your own `strdup`  
+- [X] Concatenate two strings using `malloc`  
 - [ ] Resize an integer array using `realloc`  
 - [ ] Build a dynamic array (push/pop/resize)  
 - [ ] Demonstrate shallow vs deep copy of a struct  

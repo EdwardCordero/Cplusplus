@@ -28,8 +28,7 @@ A curated list of progressively challenging C problems to build true low-level m
 - [X] Concatenate two strings using `malloc`  
 - [X] Resize an any T array using `realloc`  
 - [X] Build a dynamic array (push/pop/resize)  
-- [ ] Demonstrate shallow vs deep copy of a struct  
-- [ ] Free all allocated memory and test with Valgrind  
+- [X] Demonstrate shallow vs deep copy of a struct
 
 ---
 

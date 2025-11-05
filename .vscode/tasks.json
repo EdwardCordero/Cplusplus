@@ -10,8 +10,7 @@
                 "/EHsc",
                 "/nologo",
                 "/Fe:${fileDirname}\\main.exe",
-                "${fileDirname}\\main.cpp",
-                "${workspaceFolder}\\HelperFunctions\\helperfunctions.cpp"
+                "${workspaceFolder}\\**\\*.cpp"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

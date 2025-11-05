@@ -25,14 +25,18 @@ struct uVector {
     {
         if(this->data != nullptr)
         {
-            delete this->data;
+            delete[] this->data;
         }
         
         this->data = nullptr;
     }
     uVector(const uVector& other)
     {
-        this->data = other.data;
+        this->data = new T[other.capacity];
+        for(int i = 0; i < other.size; i++)
+        {
+            this->data[i] = other.data[i];
+        }
         this->size = other.size;
         this->capacity = other.capacity;
     }
@@ -41,7 +45,7 @@ struct uVector {
     {
         if(data != nullptr)
         {
-            delete data;
+            delete[] data;
         }
         this->data = new T[other.capacity];
         for(int i = 0; i < other.size; i++)
@@ -67,7 +71,7 @@ struct uVector {
     {
         if(data != nullptr)
         {
-            delete data;
+            delete[] data;
         }
 
         this->data = other.data;
@@ -107,7 +111,7 @@ struct uVector {
     {
         if(this->size > 0 && this->data != nullptr)
         {
-            this->data[size - 1] = NULL;
+            this->data[size - 1] = T{};
             this->size--;
         }
         else{

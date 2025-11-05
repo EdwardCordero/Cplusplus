@@ -45,7 +45,7 @@ char* concatStrs(const char* firstStr, const char* secStr)
 int main(int argsc, char** argsv)
 {
     uVector<int> intArr = {1,2,3,4};
-    uVector<char*> charArr = {"Test", "End", "Start", "duck"};
+    uVector<const char*> charArr = {"Test", "End", "Start", "duck"};
 
     //printArr(intArr.data, intArr.size);
     //printArr(charArr.data, charArr.size);
@@ -62,7 +62,7 @@ int main(int argsc, char** argsv)
 
     printArr(secondIntArr.data, secondIntArr.size);
 
-    uVector<char*> newCharArr(std::move(charArr));
+    uVector<const char*> newCharArr(std::move(charArr));
     printArr(newCharArr.data, newCharArr.size);
 
     if(charArr.data == nullptr)

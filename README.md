@@ -36,8 +36,8 @@ A curated list of progressively challenging C problems to build true low-level m
 **Goal:** Model data in memory with structs and pointers.
 
 ### 🧩 Struct Practice
-- [ ] Define a `struct Point { int x, y; }` and compute distance  
-- [ ] Create a `struct Person` with dynamically allocated `char* name`  
+- [X] Define a `struct Point { int x, y; }` and compute distance  
+- [X] Create a `struct Person` with dynamically allocated `char* name`  
 
 ### 🔗 Linked Lists
 - [ ] Implement a singly linked list (insert/delete/print)  

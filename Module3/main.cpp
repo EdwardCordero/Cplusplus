@@ -6,6 +6,16 @@
 int main(int argsc, char** argsv)
 {
     LinkedList<int> list;
+    list.insert(0);
+    list.insert(4);
+    list.insert(5);
+    list.insert(1, 1);
+    list.insert(2, 2);
+    list.insert(6);
 
-    int t = 0;
+    list.print();
+
+    list.remove(2);
+
+    list.print();
 }

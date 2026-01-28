@@ -2,8 +2,18 @@
 #include "..\HelperFunctions\helperfunctions.h"
 #include "..\DataStructures\person.h"
 #include "..\DataStructures\linkedList.h"
+#include "..\DataStructures\doublyLinkedList.h"
 
-int main(int argsc, char** argsv)
+void runDoublyLinkedListExample()
+{
+    DoublyLinkedList<int> list;
+    list.insert(0);
+    list.insert(4);
+    list.insert(10);
+    list.print();
+}
+
+void runLinkedListExample()
 {
     LinkedList<int> list;
     list.insert(0);
@@ -21,4 +31,9 @@ int main(int argsc, char** argsv)
 
     list.reverseRecursively();
     list.print();
+}
+
+int main(int argsc, char** argsv)
+{
+    runDoublyLinkedListExample();
 }

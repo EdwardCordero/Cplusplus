@@ -99,25 +99,10 @@ class LinkedList
             {
                 return;
             }
-            if(nextNode->next != nullptr)
-            {
-                cleanup(nextNode->next);
-            }
+            cleanup(nextNode->next);
             delete nextNode;
+            nextNode = nullptr;
         }
-        
-        // void flip(Node<T>* currentNode, Node<T>* prevNode)
-        // {
-        //     if(currentNode == nullptr)
-        //     {
-        //         return;
-        //     }
-
-        //     flip(currentNode->next, currentNode);
-
-        //     currentNode->next = prevNode;
-        //     return;
-        // }
 
         void reverseRecursively()
         {

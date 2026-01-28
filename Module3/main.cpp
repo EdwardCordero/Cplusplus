@@ -18,4 +18,7 @@ int main(int argsc, char** argsv)
     list.remove(2);
 
     list.print();
+
+    list.reverseRecursively();
+    list.print();
 }

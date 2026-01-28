@@ -105,8 +105,61 @@ class LinkedList
             }
             delete nextNode;
         }
+        
+        // void flip(Node<T>* currentNode, Node<T>* prevNode)
+        // {
+        //     if(currentNode == nullptr)
+        //     {
+        //         return;
+        //     }
+
+        //     flip(currentNode->next, currentNode);
+
+        //     currentNode->next = prevNode;
+        //     return;
+        // }
+
+        void reverseRecursively()
+        {
+            reverseRecursivelyHelper(this->head, nullptr);
+            
+            Node<T>* temp = this->tail;
+            this->tail = this->head;
+            this->head = temp;
+        }
+
+        void reverseIteratively()
+        {
+            Node<T>* prevNode = nullptr;
+            Node<T>* currNode = this->head;
+            Node<T>* temp = nullptr;
+            this->tail = this->head;
+            while(currNode)
+            {
+                temp = currNode->next;
+                currNode->next = prevNode;
+                prevNode = currNode;
+                currNode = temp;
+            }
+
+            this->head = prevNode;
+        }
+
     private:
         Node<T>* head;
         Node<T>* tail;
         int count;
+
+        void reverseRecursivelyHelper(Node<T>* currentNode, Node<T>* prevNode)
+        {
+            if(currentNode == nullptr)
+            {
+                return;
+            }
+
+            reverseRecursivelyHelper(currentNode->next, currentNode);
+
+            currentNode->next = prevNode;
+            return;
+        }
 };

@@ -54,6 +54,30 @@ class DoublyLinkedList
             std::cout << "Tail val = " << this->tail->val << std::endl; 
         }
 
+        LinkedNode<T>* DetectCycle()
+        {
+            LinkedNode<T>* slow = this->head;
+            LinkedNode<T>* fast = this->head;
+
+            while(fast && fast->next)
+            {
+                slow = slow->next;
+                fast = fast->next->next;
+
+                if(slow == fast)
+                {
+                    slow = this->head;
+                    while(slow != fast)
+                    {
+                        slow = slow->next;
+                    }
+                    return slow;
+                }
+            }
+
+            return nullptr;
+        }
+
     private:
         LinkedNode<T>* head;
         LinkedNode<T>* tail;

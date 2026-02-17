@@ -43,7 +43,7 @@ A curated list of progressively challenging C problems to build true low-level m
 - [X] Implement a singly linked list (insert/delete/print)  
 - [X] Reverse a linked list iteratively  
 - [X] Implement a doubly linked list  
-- [ ] Detect a cycle in a linked list (Floyd’s algorithm)  
+- [X] Detect a cycle in a linked list (Floyd’s algorithm)  
 - [ ] Merge two sorted linked lists  
 
 ### 🌳 Trees

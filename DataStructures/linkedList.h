@@ -1,5 +1,12 @@
 #pragma once
-#include "node.h"
+
+template <typename T>
+struct Node {
+    Node() : value(T{}), next(nullptr) {};
+    T value;
+    Node<T>* next;
+};
+
 
 template <typename T>
 class LinkedList

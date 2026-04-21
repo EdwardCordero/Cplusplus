@@ -13,7 +13,6 @@ T stringToInt(const char* str)
     char c = str[i];
     bool decimalPlace = false;
     int divisor = 1;
-    int dIndex = 1;
     while(c != '\0')
     {
         if(c == '.') {

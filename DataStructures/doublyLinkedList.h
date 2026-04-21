@@ -14,6 +14,8 @@ template <typename T>
 class DoublyLinkedList
 {
     public:
+        LinkedNode<T>* head;
+        LinkedNode<T>* tail;
         DoublyLinkedList(): head(nullptr), tail(nullptr), count(0) {}
 
         void insert(LinkedNode<T>* newNode)
@@ -79,8 +81,6 @@ class DoublyLinkedList
         }
 
     private:
-        LinkedNode<T>* head;
-        LinkedNode<T>* tail;
         int count;
 
         LinkedNode<T>* insertHelper(LinkedNode<T>*& currentNode, LinkedNode<T>* newNode)

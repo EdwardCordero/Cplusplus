@@ -121,3 +121,9 @@ A curated list of progressively challenging C problems to build true low-level m
 
 ---
 ✅ *By the end of this list, you’ll have implemented strings, memory allocators, linked lists, trees, graphs, and system-level utilities — the full toolset of a real C engineer.*
+
+# How to Run CMAKE in VS Code for modules
+# ctrl-shift-P  - will prompt cmake commands 
+# cmake config 
+# cmake build 
+# cmake debug = shift F5

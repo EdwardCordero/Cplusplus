@@ -11,6 +11,6 @@
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
       "preLaunchTask": "C/C++: Build Active Module"
-    }
+    },
   ]
 }

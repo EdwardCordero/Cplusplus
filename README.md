@@ -44,10 +44,10 @@ A curated list of progressively challenging C problems to build true low-level m
 - [X] Reverse a linked list iteratively  
 - [X] Implement a doubly linked list  
 - [X] Detect a cycle in a linked list (Floyd’s algorithm)  
-- [ ] Merge two sorted linked lists  
+- [X] Merge two sorted linked lists  
 
 ### 🌳 Trees
-- [ ] Define a `struct Node` for a binary tree (`data`, `left`, `right`)  
+- [X] Define a `struct Node` for a binary tree (`data`, `left`, `right`)  
 - [ ] Implement preorder, inorder, and postorder traversals (recursive)  
 - [ ] Implement level-order traversal (using a queue)  
 - [ ] Find height and number of nodes in a binary tree  

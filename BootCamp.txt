@@ -1,0 +1,573 @@
+# 🧠 C++ Coding Interview Bootcamp (14 Days)
+
+## 🎯 Goal
+
+Build **pattern recognition, speed, and confidence** for C++ coding interviews.
+
+---
+
+## 📌 Rules
+
+* ⏱️ 25–35 min per problem
+* 🗣️ Talk out loud while solving
+* 🔁 If stuck >15 min → look at solution → re-code
+* ✅ A problem is “learned” only if you can redo it from memory
+
+---
+
+## 🔁 Daily Structure
+
+1. **Memory Problem (15–20 min)** — no help
+2. **2–3 New Problems (30 min each)**
+3. **Quick Review (10–15 min)**
+
+   * What pattern?
+   * What trick?
+   * What did I miss?
+
+---
+
+# 🗓️ Week 1 — Core Patterns
+
+## ✅ Day 1 — Arrays + Hashing
+
+* [X] Two Sum
+  👉 Find two indices whose values add to a target
+
+  ```cpp
+  vector<int> twoSum(vector<int>& nums, int target);
+  ```
+
+  ⚠️ unordered_map (value → index)
+
+* [X] Contains Duplicate
+  👉 Check if any number appears more than once
+
+  ```cpp
+  bool containsDuplicate(vector<int>& nums);
+  ```
+
+  ⚠️ unordered_set
+
+* [X] Valid Anagram
+  👉 Check if two strings have same character counts
+
+  ```cpp
+  bool isAnagram(string s, string t);
+  ```
+
+  ⚠️ frequency count
+
+**Next Day Memory:** Two Sum
+
+---
+
+## ✅ Day 2 — Hashing
+
+**From Memory:**
+
+* [X] Two Sum
+
+**New:**
+
+* [X] Intersection of Two Arrays
+  👉 Return unique elements present in both arrays
+
+  ```cpp
+  vector<int> intersection(vector<int>& nums1, vector<int>& nums2);
+  ```
+
+  ⚠️ use set
+
+* [X] Top K Frequent Elements
+  👉 Return the k most frequent numbers
+
+  ```cpp
+  vector<int> topKFrequent(vector<int>& nums, int k);
+  ```
+
+  ⚠️ hashmap + bucket sort or heap
+
+* [X] Product of Array Except Self
+  👉 For each index, return product of all other elements
+
+  ```cpp
+  vector<int> productExceptSelf(vector<int>& nums);
+  ```
+
+  ⚠️ prefix + suffix (no division)
+
+**Next Day Memory:** Product of Array Except Self
+
+---
+
+## ✅ Day 3 — Two Pointers
+
+**From Memory:**
+
+* [X] Product of Array Except Self
+
+**New:**
+
+* [X] Valid Palindrome
+  👉 Ignore non-alphanumeric characters
+
+  ```cpp
+  bool isPalindrome(string s);
+  ```
+
+  ⚠️ two pointers
+
+* [X] Two Sum II (Sorted)
+  👉 Input array is sorted
+
+  ```cpp
+  vector<int> twoSum(vector<int>& numbers, int target);
+  ```
+
+  ⚠️ left/right pointers
+
+* [X] Container With Most Water
+  👉 Choose two lines to maximize area
+
+  ```cpp
+  int maxArea(vector<int>& height);
+  ```
+
+  ⚠️ move smaller pointer
+
+**Next Day Memory:** Container With Most Water
+
+---
+
+## ✅ Day 4 — Sliding Window
+
+**From Memory:**
+
+* [X] Container With Most Water
+
+**New:**
+
+* [X] Best Time to Buy and Sell Stock
+
+  ```cpp
+  int maxProfit(vector<int>& prices);
+  ```
+
+  ⚠️ track min price
+
+* [X] Longest Substring Without Repeating Characters
+
+  ```cpp
+  int lengthOfLongestSubstring(string s);
+  ```
+
+  ⚠️ sliding window + hashmap
+
+* [ ] Maximum Average Subarray
+  👉 Subarray size is fixed (k)
+
+  ```cpp
+  double findMaxAverage(vector<int>& nums, int k);
+  ```
+
+  ⚠️ fixed window
+
+**Next Day Memory:** Longest Substring Without Repeating Characters
+
+---
+
+## ✅ Day 5 — Stack
+
+**From Memory:**
+
+* [X] Longest Substring Without Repeating Characters
+
+**New:**
+
+* [X] Valid Parentheses
+  👉 Check if brackets are properly matched
+
+  ```cpp
+  bool isValid(string s);
+  ```
+
+  ⚠️ stack
+
+* [X] Min Stack
+
+  ```cpp
+  class MinStack {
+  public:
+      void push(int val);
+      void pop();
+      int top();
+      int getMin();
+  };
+  ```
+
+  ⚠️ track min
+
+* [X] Evaluate Reverse Polish Notation
+  👉 Evaluate postfix expression
+
+  ```cpp
+  int evalRPN(vector<string>& tokens);
+  ```
+
+  ⚠️ stack
+
+**Next Day Memory:** Valid Parentheses
+
+---
+
+## ✅ Day 6 — Linked Lists
+
+**From Memory:**
+
+* [X] Valid Parentheses
+
+**New:**
+
+* [X] Reverse Linked List
+
+  ```cpp
+  ListNode* reverseList(ListNode* head);
+  ```
+
+  ⚠️ prev / curr / next
+
+* [X] Merge Two Sorted Lists
+  👉 Merge into one sorted list
+
+  ```cpp
+  ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
+  ```
+
+  ⚠️ dummy node
+
+* [X] Linked List Cycle
+  👉 Detect if cycle exists
+
+  ```cpp
+  bool hasCycle(ListNode* head);
+  ```
+
+  ⚠️ slow/fast pointers
+
+**Next Day Memory:** Reverse Linked List
+
+---
+
+## ✅ Day 7 — Linked Lists (Advanced)
+
+**From Memory:**
+
+* [X] Reverse Linked List
+
+**New:**
+
+* [X] Middle of Linked List
+  👉 Return middle node
+
+  ```cpp
+  ListNode* middleNode(ListNode* head);
+  ```
+
+  ⚠️ slow/fast
+
+* [X] Remove Nth Node From End
+  👉 Remove nth node from end
+
+  ```cpp
+  ListNode* removeNthFromEnd(ListNode* head, int n);
+  ```
+
+  ⚠️ two pointers + dummy
+
+* [X] Palindrome Linked List
+  👉 Check if values form a palindrome
+
+  ```cpp
+  bool isPalindrome(ListNode* head);
+  ```
+
+  ⚠️ reverse second half
+
+**Next Day Memory:** Remove Nth Node From End
+
+---
+
+# 🗓️ Week 2 — Trees, Search, Backtracking
+
+## ✅ Day 8 — Binary Search
+
+**From Memory:**
+
+* [X] Remove Nth Node From End
+
+**New:**
+
+* [X] Binary Search
+
+  ```cpp
+  int search(vector<int>& nums, int target);
+  ```
+
+  ⚠️ mid = left + (right - left)/2
+
+* [X] Search Insert Position
+  👉 Return index where target should be inserted
+
+  ```cpp
+  int searchInsert(vector<int>& nums, int target);
+  ```
+
+  ⚠️ binary search variant
+
+* [X] Search in Rotated Sorted Array
+  👉 Sorted array rotated at pivot
+
+  ```cpp
+  int search(vector<int>& nums, int target);
+  ```
+
+  ⚠️ detect sorted half
+
+**Next Day Memory:** Binary Search
+
+---
+
+## ✅ Day 9 — Trees (DFS)
+
+**From Memory:**
+
+* [ ] Binary Search
+
+**New:**
+
+* [ ] Maximum Depth of Binary Tree
+  👉 Return max depth
+
+  ```cpp
+  int maxDepth(TreeNode* root);
+  ```
+
+  ⚠️ DFS recursion
+
+* [ ] Invert Binary Tree
+  👉 Swap left/right children
+
+  ```cpp
+  TreeNode* invertTree(TreeNode* root);
+  ```
+
+  ⚠️ recursion
+
+* [ ] Same Tree
+  👉 Check if trees are identical
+
+  ```cpp
+  bool isSameTree(TreeNode* p, TreeNode* q);
+  ```
+
+  ⚠️ compare nodes
+
+**Next Day Memory:** Maximum Depth of Binary Tree
+
+---
+
+## ✅ Day 10 — Trees (BFS / Advanced)
+
+**From Memory:**
+
+* [ ] Maximum Depth of Binary Tree
+
+**New:**
+
+* [ ] Binary Tree Level Order Traversal
+  👉 Return nodes level by level
+
+  ```cpp
+  vector<vector<int>> levelOrder(TreeNode* root);
+  ```
+
+  ⚠️ queue (BFS)
+
+* [ ] Diameter of Binary Tree
+  👉 Longest path between nodes
+
+  ```cpp
+  int diameterOfBinaryTree(TreeNode* root);
+  ```
+
+  ⚠️ DFS height tracking
+
+* [ ] Balanced Binary Tree
+  👉 Check if height-balanced
+
+  ```cpp
+  bool isBalanced(TreeNode* root);
+  ```
+
+  ⚠️ return height or fail
+
+**Next Day Memory:** Binary Tree Level Order Traversal
+
+---
+
+## ✅ Day 11 — Backtracking
+
+**From Memory:**
+
+* [ ] Binary Tree Level Order Traversal
+
+**New:**
+
+* [ ] Subsets
+  👉 Return all subsets
+
+  ```cpp
+  vector<vector<int>> subsets(vector<int>& nums);
+  ```
+
+  ⚠️ include/exclude
+
+* [ ] Permutations
+  👉 Return all orderings
+
+  ```cpp
+  vector<vector<int>> permute(vector<int>& nums);
+  ```
+
+  ⚠️ track used
+
+* [ ] Combination Sum
+  👉 Sum to target using candidates
+
+  ```cpp
+  vector<vector<int>> combinationSum(vector<int>& candidates, int target);
+  ```
+
+  ⚠️ reuse allowed
+
+**Next Day Memory:** Subsets
+
+---
+
+## ✅ Day 12 — Intervals / Greedy
+
+**From Memory:**
+
+* [ ] Subsets
+
+**New:**
+
+* [ ] Merge Intervals
+  👉 Merge overlapping ranges
+
+  ```cpp
+  vector<vector<int>> merge(vector<vector<int>>& intervals);
+  ```
+
+  ⚠️ sort first
+
+* [ ] Insert Interval
+  👉 Insert and merge
+
+  ```cpp
+  vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval);
+  ```
+
+  ⚠️ overlap logic
+
+* [ ] Non-overlapping Intervals
+  👉 Remove minimum overlaps
+
+  ```cpp
+  int eraseOverlapIntervals(vector<vector<int>>& intervals);
+  ```
+
+  ⚠️ greedy by end time
+
+**Next Day Memory:** Merge Intervals
+
+---
+
+## ✅ Day 13 — Mixed Review
+
+**From Memory:**
+
+* [ ] Merge Intervals
+
+**New:**
+
+* [ ] Maximum Subarray
+  👉 Max sum contiguous subarray
+
+  ```cpp
+  int maxSubArray(vector<int>& nums);
+  ```
+
+  ⚠️ Kadane’s
+
+* [ ] Climbing Stairs
+  👉 Ways to reach top
+
+  ```cpp
+  int climbStairs(int n);
+  ```
+
+  ⚠️ DP (Fibonacci)
+
+* [ ] Group Anagrams
+  👉 Group strings with same characters
+
+  ```cpp
+  vector<vector<string>> groupAnagrams(vector<string>& strs);
+  ```
+
+  ⚠️ sorted key
+
+**Next Day Memory:** Maximum Subarray
+
+---
+
+## ✅ Day 14 — Mock Interview Day
+
+**From Memory:**
+
+* [ ] Maximum Subarray
+
+**Pick ANY 2 (timed):**
+
+* [ ] Longest Substring Without Repeating Characters
+* [ ] Merge Two Sorted Lists
+* [ ] Binary Tree Level Order Traversal
+* [ ] Search in Rotated Sorted Array
+* [ ] Top K Frequent Elements
+
+---
+
+# 🧠 Pattern Triggers (Read Daily)
+
+* Hashing → map/set
+* Two pointers → sorted / pairs
+* Sliding window → substring / subarray
+* Stack → matching / undo
+* Linked list → pointer manipulation
+* Binary search → sorted search space
+* Tree DFS → recursion
+* Tree BFS → queue
+* Backtracking → choices
+* Intervals → sort first
+* DP → reuse previous results
+
+---
+
+# 🎯 End Goal
+
+* Recognize patterns instantly
+* Choose correct approach quickly
+* Code clean solutions in C++
+* Stay calm under pressure

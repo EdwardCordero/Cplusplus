@@ -3,6 +3,7 @@
 #include "..\DataStructures\person.h"
 #include "..\DataStructures\linkedList.h"
 #include "..\DataStructures\doublyLinkedList.h"
+#include "..\DataStructures\binaryTree.h"
 
 void runLinkedListExample()
 {
@@ -98,7 +99,7 @@ void mergeTwoSortedDLL(DoublyLinkedList<T>& l1, DoublyLinkedList<T>& l2)
     l2.tail = nullptr;
 }
 
-DoublyLinkedList<int>* runDoublyLinkedListExample()
+void runDoublyLinkedListExample()
 {
     DoublyLinkedList<int>* list = new DoublyLinkedList<int>;
     list->insert(1);
@@ -108,21 +109,21 @@ DoublyLinkedList<int>* runDoublyLinkedListExample()
     std::cout << "List A: " << std::endl;
     printAny<int>(*list);
 
-    return list;
+    DoublyLinkedList<int>* list1 = new DoublyLinkedList<int>;
+    list1->insert(0);
+    list1->insert(2);
+    list1->insert(8);
+    std::cout << "List B: " << std::endl;
+    printAny<int>(*list1);
+
+    mergeTwoSortedDLL(*list, *list1);
+    std::cout << "MergedList: " << std::endl;
+    printAny(*list);
 }
 
 int main(int argsc, char** argsv)
 {
-    DoublyLinkedList<int> *list = runDoublyLinkedListExample();
-
-    DoublyLinkedList<int> list1;
-    list1.insert(0);
-    list1.insert(2);
-    list1.insert(8);
-    std::cout << "List B: " << std::endl;
-    printAny(list1);
-
-    mergeTwoSortedDLL(*list, list1);
-    std::cout << "MergedList: " << std::endl;
-    printAny(*list);
+    runDoublyLinkedListExample();
+    node<int> nodeA = node<int>();
+    int t= 0;
 }

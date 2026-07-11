@@ -342,7 +342,7 @@ Build **pattern recognition, speed, and confidence** for C++ coding interviews.
 
 **From Memory:**
 
-* [ ] Binary Search
+* [X] Binary Search
 
 **New:**
 

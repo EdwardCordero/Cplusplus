@@ -6,6 +6,7 @@
 #include <string>
 #include "..\HelperFunctions\helperfunctions.h"
 #include "..\DataStructures\linkedList.h"
+#include "..\DataStructures\binaryTree.h"
 
 using namespace std;
 
@@ -1113,5 +1114,54 @@ int search_rotated(vector<int>& nums, int target)
 }
 
 #pragma endregion
+
+#pragma region Day9Functions
+//Recap
+int recap_binarySearch(vector<int>& nums, int target)
+{
+    int left = 0;
+    int right = nums.size() - 1;
+    while(left <= right)
+    {
+        int mid = left + (right - left) / 2;
+        if(nums[mid] == target)
+        {
+            return mid;
+        }
+
+        if(target < nums[mid])
+        {
+            right = mid - 1;
+        }
+        else{
+            left =  mid + 1;
+        }
+    }
+    return -1;
+}
+
+int maxDepth(node<int>* root)
+{
+    node<int>* currNode = root;
+    int depth = 0;
+    while(currNode != nullptr)
+    {
+        depth++;
+        currNode = root->right;
+    }
+    return depth;
+}
+
+node<int>* invertTree(node<int>* root)
+{
+
+}
+
+bool isSameTree(node<int>* p, node<int>* q)
+{
+
+}
+#pragma endregion
+
 
 
